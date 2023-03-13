@@ -1,0 +1,23 @@
+{
+  "accountMenu": {
+    "textProfile": "Profile",
+    "textThemeModeDark": "Dark",
+    "textThemeModeLight": "Light",
+    "textLangVi": "Vietnamese",
+    "textLangEn": "English",
+    "textLogout": "Logout",
+    "info": "App Information"
+  },
+  "navBar": {
+    "textDashboard": "Dashboard",
+    "textChats": "Chats",
+    "textCommonComponents": "Components"
+  },
+  "textLoadingUser": "Loading user info...",
+  "infoDialog": {
+    "title": "Application Infomation",
+    "version": "Version",
+    "releaseDate": "Release date",
+    "web": "Web application"
+  }
+}

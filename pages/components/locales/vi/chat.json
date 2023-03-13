@@ -1,0 +1,53 @@
+{
+  "tab": {
+    "need_support": "Cần hỗ trợ",
+    "supporting": "Đang hỗ trợ",
+    "no_support": "Không hỗ trợ"
+  },
+  "search": "Tìm kiếm...",
+  "reload": "Tải lại",
+  "txtUserTyping": "Đang trả lời...",
+  "txtBotTyping": "Đang trả lời...",
+  "txtEnterMessage": "Nhập tin nhắn...",
+  "txtLike": "Thích",
+  "txtSend": "Gửi",
+  "txtEmoji": "Emoji",
+  "txtAttachFile": "Thêm file",
+  "txtStartSupport": "Bắt đầu hỗ trợ",
+  "txtStartSupportContent": "Bạn có muốn bắt đầu hỗ trợ?",
+  "txtEndSupport": "Dừng hỗ trợ",
+  "txtENdSupportContent": "Bạn có muốn dừng hỗ trợ?",
+  "txtCompleteSupport": "Hoàn thành hỗ trợ",
+  "txtCompleteSupportContent": "Bạn có muốn hoàn thành hỗ trợ?",
+  "txtFlagDownSupport": "Hạ cờ",
+  "txtFlagDownContent": "Bạn có muốn xuống cờ?",
+  "flagDownDialog": {
+    "title": "Hạ cờ",
+    "txtSelectedMessages": "Các tin nhắn đã chọn",
+    "txtAllFlaggedMessages": "Tất cả tin nhắn có cờ",
+    "txtReasonTitle": "Lý do hạ cờ?",
+    "txtReasonNotSureNegative": "Không rõ là tiêu cực",
+    "txtReasonNotNegative": "Không tiêu cực"
+  },
+  "txtSelectMessage": "Chọn tin nhắn",
+  "txtFlagToolTip": "Tin nhắn gắn cờ",
+  "botSuggestion": {
+    "txtUseSuggestion": "Sử dụng gợi ý",
+    "txtSuggestionResponse": "Gợi ý trả lời",
+    "toolTipClone": "Sao chép (Ctrl/Meta + b)",
+    "toolTipAISuggestion": "AI gợi ý",
+    "txtReceiveSuggestion": "Nhận gợi ý"
+  },
+  "actionAlreadyPerformed": "Thao tác đã được thực hiện bởi operator khác",
+  "flagTakenDown": "Trạng thái của User đã được cập nhật",
+  "inputPlaceholder": "Nhập tin nhắn",
+  "vsc": {
+    "grade": "Khối",
+    "class": "Lớp"
+  },
+  "gender": {
+    "male": "Nam",
+    "female": "Nữ",
+    "unknown": "Unknown"
+  }
+}

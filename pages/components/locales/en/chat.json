@@ -1,0 +1,53 @@
+{
+  "tab": {
+    "need_support": "Need support",
+    "supporting": "Supporting",
+    "no_support": "No support"
+  },
+  "search": "Search...",
+  "reload": "Reload",
+  "txtUserTyping": "User is typing...",
+  "txtBotTyping": "Bot is typing...",
+  "txtEnterMessage": "Enter a message...",
+  "txtLike": "Like",
+  "txtSend": "Send",
+  "txtEmoji": "Emoji",
+  "txtAttachFile": "Attach file",
+  "txtStartSupport": "Start support",
+  "txtStartSupportContent": "Do you want to start support?",
+  "txtEndSupport": "End support",
+  "txtENdSupportContent": "Do you want to end support?",
+  "txtCompleteSupport": "Complete support",
+  "txtCompleteSupportContent": "Do you want to complete support?",
+  "txtFlagDownSupport": "Flag down",
+  "txtFlagDownContent": "Do you want to flag down?",
+  "flagDownDialog": {
+    "title": "Flag down",
+    "txtSelectedMessages": "Selected messages",
+    "txtAllFlaggedMessages": "All flagged messages",
+    "txtReasonTitle": "Specific reason?",
+    "txtReasonNotSureNegative": "Not sure negative",
+    "txtReasonNotNegative": "Not negative"
+  },
+  "txtSelectMessage": "Select message",
+  "txtFlagToolTip": "Flagged message",
+  "botSuggestion": {
+    "txtUseSuggestion": "Use suggestion",
+    "txtSuggestionResponse": "Suggestion response",
+    "toolTipClone": "Clone (Ctrl/Meta + b)",
+    "toolTipAISuggestion": "AI Suggestion",
+    "txtReceiveSuggestion": "Receive suggestion"
+  },
+  "actionAlreadyPerformed": "Action is already performed by another operator",
+  "flagTakenDown": "User's state is updated",
+  "inputPlaceholder": "Enter a message",
+  "vsc": {
+    "grade": "Grade",
+    "class": "Class"
+  },
+  "gender": {
+    "male": "Male",
+    "female": "Female",
+    "unknown": "Unknown"
+  }
+}

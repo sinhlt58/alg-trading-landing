@@ -1,0 +1,23 @@
+{
+  "accountMenu": {
+    "textProfile": "Hồ sơ",
+    "textThemeModeDark": "Tối",
+    "textThemeModeLight": "Sáng",
+    "textLangVi": "Tiếng Việt",
+    "textLangEn": "Tiếng Anh",
+    "textLogout": "Đăng xuất",
+    "info": "Thông tin"
+  },
+  "navBar": {
+    "textDashboard": "Bảng điều khiển",
+    "textChats": "Hội thoại",
+    "textCommonComponents": "Thành phần"
+  },
+  "textLoadingUser": "Đang tải dữ liệu người dùng...",
+  "infoDialog": {
+    "title": "Thông tin ứng dụng",
+    "version": "Phiên bản",
+    "releaseDate": "Ngày phát hành",
+    "web": "Ứng dụng web"
+  }
+}
