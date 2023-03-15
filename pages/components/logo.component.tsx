@@ -13,12 +13,12 @@ export const LogoComponent = ({
 }: Props) => {
   return (
     <div
-      className="flex items-center cursor-pointer"
+      className="flex items-center cursor-pointer gap-2"
       onClick={() => {
         onClick && onClick();
       }}
     >
-      <IconButton disableRipple sx={{}}>
+      <IconButton disableRipple sx={{}} className="p-0">
         <img src="/bunny_bot_logo.png" alt="logo" className="w-8 h-8" />
       </IconButton>
       {!hideText && (
