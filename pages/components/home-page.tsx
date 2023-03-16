@@ -1,6 +1,9 @@
 import { Box, Grid, Typography } from "@mui/material";
+import Image from "next/image";
 
 export default function HomePage() {
+  const imageNames = [1, 2, 3, 4, 5, 6, 7, 8];
+
   return (
     <Box
       className="mt-12"
@@ -28,6 +31,22 @@ export default function HomePage() {
           <Typography>BINANCE</Typography>
         </Grid>
       </Grid>
+      <Box className="flex flex-col gap-2 mt-10">
+        <Typography>Management dashboard</Typography>
+        <Box className="flex flex-wrap gap-2">
+          {imageNames.map((name) => {
+            return (
+              <Image
+                key={name}
+                src={`/app_images/dark/${name}.png`}
+                alt={name.toString()}
+                width={200}
+                height={400}
+              ></Image>
+            );
+          })}
+        </Box>
+      </Box>
     </Box>
   );
 }
