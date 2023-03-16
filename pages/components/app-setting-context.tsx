@@ -5,13 +5,13 @@ import {
   ThemeOptions,
   ThemeProvider,
   createTheme,
-} from '@mui/material';
-import { createContext, useContext, useState, useEffect } from 'react';
-import i18n from 'i18next';
-import { IS_CLIENT_SIDE } from './common';
-import { getAppTheme } from './mui-theme';
-import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
+} from "@mui/material";
+import { createContext, useContext, useState, useEffect } from "react";
+import i18n from "i18next";
+import { IS_CLIENT_SIDE } from "./common";
+import { getAppTheme } from "./mui-theme";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { AdapterMoment } from "@mui/x-date-pickers/AdapterMoment";
 
 const LOCAL_STORAGE_LANGUAGE = "language";
 const LOCAL_STORAGE_THEME_MODE = "theme";
@@ -43,12 +43,16 @@ interface Props {
 }
 export const AppSettingProvider = ({ children }: Props) => {
   const [themeMode, setThemeMode] = useState<PaletteMode>(() => {
-    const savedThemeMode = IS_CLIENT_SIDE ? localStorage.getItem(LOCAL_STORAGE_THEME_MODE) : '';
-    return (savedThemeMode ? savedThemeMode : 'light') as PaletteMode;
+    const savedThemeMode = IS_CLIENT_SIDE
+      ? localStorage.getItem(LOCAL_STORAGE_THEME_MODE)
+      : "";
+    return (savedThemeMode ? savedThemeMode : "light") as PaletteMode;
   });
   const [language, setLanguage] = useState(() => {
-    let savedLang = IS_CLIENT_SIDE ? localStorage.getItem(LOCAL_STORAGE_LANGUAGE) : '';
-    savedLang = savedLang ? savedLang : 'vi';
+    let savedLang = IS_CLIENT_SIDE
+      ? localStorage.getItem(LOCAL_STORAGE_LANGUAGE)
+      : "";
+    savedLang = savedLang ? savedLang : "en";
     i18n.changeLanguage(savedLang);
     return savedLang;
   });
@@ -68,7 +72,7 @@ export const AppSettingProvider = ({ children }: Props) => {
     saveLocalStorate = true
   ) => {
     let newMode =
-      (v as PaletteMode) || (themeMode === 'light' ? 'dark' : 'light');
+      (v as PaletteMode) || (themeMode === "light" ? "dark" : "light");
     setThemeMode(newMode);
     setMoreOptions(options);
     if (saveLocalStorate && IS_CLIENT_SIDE) {
@@ -82,7 +86,7 @@ export const AppSettingProvider = ({ children }: Props) => {
     saveLocalStorate = true
   ) => {
     const newLang =
-      v || (language === 'en' || language.startsWith('en-') ? 'vi' : 'en');
+      v || (language === "en" || language.startsWith("en-") ? "vi" : "en");
     setLanguage(newLang);
     await i18n.changeLanguage(newLang);
     if (saveLocalStorate && IS_CLIENT_SIDE) {
