@@ -6,16 +6,9 @@ export default function HomePage() {
 
   return (
     <Box
-      className="mt-12"
-      sx={{
-        paddingX: {
-          xs: 2,
-          sm: 2,
-          md: 0,
-        },
-      }}
+      className="mt-12 flex flex-col gap-12"
     >
-      <Grid container spacing={8}>
+      <Grid container spacing={6}>
         <Grid item xs={12} sm={4}>
           <Typography>Crypto trading bot</Typography>
           <Typography>
@@ -31,9 +24,9 @@ export default function HomePage() {
           <Typography>BINANCE</Typography>
         </Grid>
       </Grid>
-      <Box className="flex flex-col gap-2 mt-10">
+      <Box className="flex flex-col gap-2">
         <Typography>Management dashboard</Typography>
-        <Box className="flex flex-wrap gap-2">
+        <Box className="flex gap-1 overflow-x-auto">
           {imageNames.map((name) => {
             return (
               <Image
@@ -46,6 +39,14 @@ export default function HomePage() {
             );
           })}
         </Box>
+      </Box>
+      <Box className="flex flex-col gap-2">
+        <Typography>Pricing</Typography>
+        <Typography>60$ per month</Typography>
+      </Box>
+      <Box className="flex flex-col gap-2">
+        <Typography>Contact</Typography>
+        <Typography>Youtube, facebook, tiktok, telegram, zalo</Typography>
       </Box>
     </Box>
   );

@@ -5,12 +5,16 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { ReactNode, useState } from "react";
 import classNames from "classnames";
 
-interface Props {}
-export const NavBar = ({}: Props) => {
+interface Props { }
+export const NavBar = ({ }: Props) => {
   const [sideMenuVisible, setSideMenuVisible] = useState(false);
 
   return (
-    <div className="flex items-center py-2">
+    <Box className="flex items-center py-2"
+      sx={{
+        paddingY: 2,
+      }}
+    >
       <LogoComponent responsive={false} />
       <Box
         sx={{
@@ -60,7 +64,7 @@ export const NavBar = ({}: Props) => {
           open={sideMenuVisible}
         />
       </Box>
-    </div>
+    </Box>
   );
 };
 
