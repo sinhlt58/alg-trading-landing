@@ -1,7 +1,6 @@
-import Head from 'next/head'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] });
+import Head from "next/head";
+import { Inter } from "next/font/google";
+import HomePage from "./components/home-page";
 
 export default function Home() {
   return (
@@ -13,8 +12,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className='bg-rose-300'>Hello</div>
+        <HomePage />
       </main>
     </>
-  )
+  );
 }
