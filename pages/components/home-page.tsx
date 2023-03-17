@@ -42,14 +42,32 @@ export default function HomePage() {
           <div className="flex flex-col gap-2">
             <Typography variant="h6">Crypto trading bot</Typography>
             <Typography>
-              Monitor the market and help your trading more consistent
+              Monitor the market and help your trading more consistency.
             </Typography>
           </div>
         </Grid>
         <Grid item xs={12} sm={4}>
           <div className="flex flex-col gap-2">
             <Typography variant="h6">Signal notifications</Typography>
-            <Typography>Join Telegram group</Typography>
+            <Link href={"https://t.me/bunnybotsignals"} target="_blank">
+              <div className="flex items-center gap-2">
+                <div
+                  style={{
+                    width: 30,
+                    height: 30,
+                    position: "relative",
+                    cursor: "pointer",
+                  }}
+                >
+                  <Image
+                    src="/logos/telegram_logo.png"
+                    alt="Telegram"
+                    fill
+                  ></Image>
+                </div>
+                <Typography>Telegram group</Typography>
+              </div>
+            </Link>
           </div>
         </Grid>
         <Grid item xs={12} sm={4}>
