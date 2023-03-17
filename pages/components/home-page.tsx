@@ -1,6 +1,7 @@
 import { AppEvent } from "@/shared/modesl";
 import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { NavItemModel } from "./nav-bar";
 
@@ -49,8 +50,12 @@ export default function HomePage() {
         </Grid>
         <Grid item xs={12} sm={4}>
           <div className="flex flex-col gap-2">
-            <Typography variant="h6">Support exchanges</Typography>
-            <Typography>BINANCE</Typography>
+            <Typography variant="h6">Supported exchanges</Typography>
+            <Link href={"https://binance.com"} target="_blank">
+              <div style={{ width: 120, height: 60, position: 'relative', cursor: "pointer" }}>
+                <Image src="/logos/binance_logo_2.png" alt="Binance" fill></Image>
+              </div>
+            </Link>
           </div>
         </Grid>
       </Grid>
