@@ -1,7 +1,7 @@
 import { AppEvent } from "@/shared/modesl";
 import { Box, Grid, Typography } from "@mui/material";
 import Image from "next/image";
-import { RefObject, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { NavItemModel } from "./nav-bar";
 
 export default function HomePage() {
@@ -12,10 +12,11 @@ export default function HomePage() {
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const handleClickNavScrollItem = (e: any) => {
+    const handleClickNavScrollItem = async (e: any) => {
       const item = e.detail as NavItemModel;
       const blockRef = item.action === "home" ? homeBlockRef : bottomRef;
       if (blockRef && blockRef.current) {
+        await new Promise(r => setTimeout(r, 100));
         blockRef.current.scrollIntoView({ behavior: "smooth" });
       }
     }

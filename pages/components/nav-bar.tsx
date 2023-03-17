@@ -50,11 +50,26 @@ export const NavBar = ({ onClickScrollItem }: Props) => {
         action: "space",
       },
       {
+        name: "Tiếng anh",
+        type: "button",
+        action: "lang",
+        icon: <TranslateOutlinedIcon />,
+        hidden: language === "vi",
+      },
+      {
+        name: "Vietnamese",
+        type: "button",
+        action: "lang",
+        icon: <TranslateOutlinedIcon />,
+        hidden: language !== "vi",
+      },
+      {
         name: "Dark",
         type: "button",
         action: "theme",
         icon: <DarkModeOutlinedIcon />,
         hidden: themeMode === "dark",
+        renderHorizontal: () => <DarkModeOutlinedIcon />
       },
       {
         name: "Light",
@@ -62,26 +77,19 @@ export const NavBar = ({ onClickScrollItem }: Props) => {
         action: "theme",
         icon: <LightModeOutlinedIcon />,
         hidden: themeMode === "light",
-      },
-      {
-        name: "Vi",
-        type: "button",
-        action: "lang",
-        icon: <TranslateOutlinedIcon />,
-        hidden: language === "vi",
-      },
-      {
-        name: "En",
-        type: "button",
-        action: "lang",
-        icon: <TranslateOutlinedIcon />,
-        hidden: language !== "vi",
+        renderHorizontal: () => <LightModeOutlinedIcon />
       },
       {
         name: "Login",
         type: "link",
         action: "login",
         icon: <LoginOutlinedIcon />,
+        renderHorizontal: () => (
+          <div className="flex items-center gap-2">
+            <LoginOutlinedIcon />
+            <Typography>Login</Typography>
+          </div>
+        ),
         route: "https://bunnybot.sinhblack.com"
       },
     ];
@@ -129,6 +137,14 @@ export const NavBar = ({ onClickScrollItem }: Props) => {
           if (item.hidden) return null;
           if (item.type === "space") {
             return <div key={item.name} className="flex-1"></div>;
+          }
+
+          if (item.renderHorizontal) {
+            return (
+              <div key={item.name} className="cursor-pointer" onClick={() => handleItemClick(item)}>
+                {item.renderHorizontal()}
+              </div>
+            )
           }
 
           return (
@@ -180,7 +196,8 @@ export interface NavItemModel {
   isActive?: boolean;
   route?: string;
   icon?: ReactNode;
-  render?: () => void;
+  renderHorizontal?: () => ReactNode | null;
+  renderSideMenu?: () => ReactNode | null;
   hidden?: boolean;
 }
 interface SideMenuComponentProps {
