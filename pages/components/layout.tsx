@@ -11,8 +11,8 @@ export function Layout({ children }: Props) {
   return (
     <AppSettingProvider>
       <Grid container sx={{ bgcolor: (theme) => theme.palette.background.default }}>
-        <Grid item xs={0} md={1}></Grid>
-        <Grid item xs={12} md={10}
+        <Grid item xs={0} md={2}></Grid>
+        <Grid item xs={12} md={8}
           sx={{
             paddingX: {
               xs: 2,
@@ -25,7 +25,7 @@ export function Layout({ children }: Props) {
           <main>{children}</main>
           <Footer />
         </Grid>
-        <Grid item xs={0} md={1}></Grid>
+        <Grid item xs={0} md={2}></Grid>
       </Grid>
     </AppSettingProvider>
   );

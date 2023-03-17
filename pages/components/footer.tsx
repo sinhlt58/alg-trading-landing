@@ -3,7 +3,7 @@ import { Typography } from "@mui/material"
 interface Props {
   mt?: string;
 }
-export const Footer = ({ mt = '320px' }: Props) => {
+export const Footer = ({ mt = '0px' }: Props) => {
 
   return (
     <div className={`flex flex-col ${mt}`} style={{ marginTop: mt }}>

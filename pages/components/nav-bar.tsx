@@ -12,9 +12,12 @@ import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
 import { useAppSettingContext } from "./app-setting-context";
 import { useRouter } from "next/router";
 import { Footer } from "./footer";
+import { AppEvent } from "@/shared/modesl";
 
-interface Props { }
-export const NavBar = ({ }: Props) => {
+interface Props {
+  onClickScrollItem?: (item: NavItemModel) => void;
+}
+export const NavBar = ({ onClickScrollItem }: Props) => {
   const { themeMode, toggleThemeMode, language, toggleLanguage } =
     useAppSettingContext();
   const router = useRouter();
@@ -94,6 +97,10 @@ export const NavBar = ({ }: Props) => {
     }
     if (item.action === "login" && item.route) {
       router.push(item.route);
+    }
+    if (item.type === "scroll") {
+      document.dispatchEvent(new CustomEvent(AppEvent.clickNavScrollItem, { detail: item }));
+      onClickScrollItem && onClickScrollItem(item);
     }
   }
 
