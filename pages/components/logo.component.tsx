@@ -18,7 +18,7 @@ export const LogoComponent = ({
         onClick && onClick();
       }}
     >
-      <IconButton disableRipple sx={{}} className="p-0">
+      <IconButton disableRipple className="p-0">
         <img src="/bunny_bot_logo.png" alt="logo" className="w-8 h-8" />
       </IconButton>
       {!hideText && (

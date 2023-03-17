@@ -42,20 +42,8 @@ interface Props {
   children: React.ReactNode | React.ReactNode[];
 }
 export const AppSettingProvider = ({ children }: Props) => {
-  const [themeMode, setThemeMode] = useState<PaletteMode>(() => {
-    const savedThemeMode = IS_CLIENT_SIDE
-      ? localStorage.getItem(LOCAL_STORAGE_THEME_MODE)
-      : "";
-    return (savedThemeMode ? savedThemeMode : "light") as PaletteMode;
-  });
-  const [language, setLanguage] = useState(() => {
-    let savedLang = IS_CLIENT_SIDE
-      ? localStorage.getItem(LOCAL_STORAGE_LANGUAGE)
-      : "";
-    savedLang = savedLang ? savedLang : "en";
-    i18n.changeLanguage(savedLang);
-    return savedLang;
-  });
+  const [themeMode, setThemeMode] = useState<PaletteMode>("light" as PaletteMode);
+  const [language, setLanguage] = useState("en");
   const [theme, setTheme] = useState<Theme>(() => {
     return getAppTheme(themeMode);
   });
@@ -65,6 +53,23 @@ export const AppSettingProvider = ({ children }: Props) => {
     const newTheme = createTheme(getAppTheme(themeMode), moreOptions);
     setTheme(newTheme);
   }, [themeMode, moreOptions]);
+
+  useEffect(() => {
+    let savedThemeMode = IS_CLIENT_SIDE
+      ? localStorage.getItem(LOCAL_STORAGE_THEME_MODE)
+      : "";
+    savedThemeMode = (savedThemeMode ? savedThemeMode : "light") as PaletteMode;
+    setThemeMode(savedThemeMode);
+  }, []);
+
+  useEffect(() => {
+    let savedLang = IS_CLIENT_SIDE
+      ? localStorage.getItem(LOCAL_STORAGE_LANGUAGE)
+      : "";
+    savedLang = savedLang ? savedLang : "en";
+    i18n.changeLanguage(savedLang);
+    setLanguage(savedLang);
+  }, []);
 
   const toggleThemeMode = (
     v?: string,

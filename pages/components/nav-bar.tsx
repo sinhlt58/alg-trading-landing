@@ -1,5 +1,4 @@
 import { Box, Drawer, IconButton, MenuItem, Typography } from "@mui/material";
-import Link from "next/link";
 import { LogoComponent } from "./logo.component";
 import MenuIcon from "@mui/icons-material/Menu";
 import { ReactNode, useEffect, useState } from "react";
@@ -84,7 +83,7 @@ export const NavBar = ({ }: Props) => {
       },
     ];
     setItems(items)
-  }, []);
+  }, [themeMode, language]);
 
   const handleItemClick = (item: NavItemModel) => {
     if (item.action === "lang") {
