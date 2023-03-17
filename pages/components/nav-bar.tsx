@@ -2,7 +2,7 @@ import { Box, Drawer, IconButton, MenuItem, Typography } from "@mui/material";
 import Link from "next/link";
 import { LogoComponent } from "./logo.component";
 import MenuIcon from "@mui/icons-material/Menu";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import HouseOutlinedIcon from "@mui/icons-material/HouseOutlined";
 import PaidOutlinedIcon from "@mui/icons-material/PaidOutlined";
 import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
@@ -11,72 +11,92 @@ import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
 import LoginOutlinedIcon from "@mui/icons-material/LoginOutlined";
 import { useAppSettingContext } from "./app-setting-context";
+import { useRouter } from "next/router";
+import { Footer } from "./footer";
 
-interface Props {}
-export const NavBar = ({}: Props) => {
+interface Props { }
+export const NavBar = ({ }: Props) => {
   const { themeMode, toggleThemeMode, language, toggleLanguage } =
     useAppSettingContext();
+  const router = useRouter();
   const [sideMenuVisible, setSideMenuVisible] = useState(false);
+  const [items, setItems] = useState<NavItemModel[]>([]);
 
-  const items: NavItemModel[] = [
-    {
-      name: "Home",
-      type: "scroll",
-      action: "home",
-      icon: <HouseOutlinedIcon />,
-    },
-    {
-      name: "Pricing",
-      type: "scroll",
-      action: "pricing",
-      icon: <PaidOutlinedIcon />,
-    },
-    {
-      name: "Contact",
-      type: "scroll",
-      action: "contact",
-      icon: <ContactPageOutlinedIcon />,
-    },
-    {
-      name: "Space",
-      type: "space",
-      action: "space",
-    },
-    {
-      name: "Dark",
-      type: "button",
-      action: "theme",
-      icon: <DarkModeOutlinedIcon />,
-      hidden: themeMode === "dark",
-    },
-    {
-      name: "Light",
-      type: "button",
-      action: "theme",
-      icon: <LightModeOutlinedIcon />,
-      hidden: themeMode === "light",
-    },
-    {
-      name: "Vi",
-      type: "button",
-      action: "lang",
-      icon: <TranslateOutlinedIcon />,
-      hidden: language === "vi",
-    },
-    {
-      name: "En",
-      type: "button",
-      action: "lang",
-      icon: <TranslateOutlinedIcon />,
-      hidden: language !== "vi",
-    },
-    {
-      name: "Login",
-      type: "link",
-      action: "login",
-      icon: <LoginOutlinedIcon />,
-    },
-  ];
+  useEffect(() => {
+    const items: NavItemModel[] = [
+      {
+        name: "Home",
+        type: "scroll",
+        action: "home",
+        icon: <HouseOutlinedIcon />,
+      },
+      {
+        name: "Pricing",
+        type: "scroll",
+        action: "pricing",
+        icon: <PaidOutlinedIcon />,
+      },
+      {
+        name: "Contact",
+        type: "scroll",
+        action: "contact",
+        icon: <ContactPageOutlinedIcon />,
+      },
+      {
+        name: "Space",
+        type: "space",
+        action: "space",
+      },
+      {
+        name: "Dark",
+        type: "button",
+        action: "theme",
+        icon: <DarkModeOutlinedIcon />,
+        hidden: themeMode === "dark",
+      },
+      {
+        name: "Light",
+        type: "button",
+        action: "theme",
+        icon: <LightModeOutlinedIcon />,
+        hidden: themeMode === "light",
+      },
+      {
+        name: "Vi",
+        type: "button",
+        action: "lang",
+        icon: <TranslateOutlinedIcon />,
+        hidden: language === "vi",
+      },
+      {
+        name: "En",
+        type: "button",
+        action: "lang",
+        icon: <TranslateOutlinedIcon />,
+        hidden: language !== "vi",
+      },
+      {
+        name: "Login",
+        type: "link",
+        action: "login",
+        icon: <LoginOutlinedIcon />,
+        route: "https://bunnybot.sinhblack.com"
+      },
+    ];
+    setItems(items)
+  }, []);
+
+  const handleItemClick = (item: NavItemModel) => {
+    if (item.action === "lang") {
+      toggleLanguage();
+    }
+    if (item.action === "theme") {
+      toggleThemeMode();
+    }
+    if (item.action === "login" && item.route) {
+      router.push(item.route);
+    }
+  }
 
   return (
     <Box
@@ -106,7 +126,11 @@ export const NavBar = ({}: Props) => {
           }
 
           return (
-            <Typography className="cursor-pointer" key={item.name}>
+            <Typography
+              className="cursor-pointer"
+              key={item.name}
+              onClick={() => handleItemClick(item)}
+            >
               {item.name}
             </Typography>
           );
@@ -132,6 +156,10 @@ export const NavBar = ({}: Props) => {
         <SideMenuComponent
           items={items}
           onClose={() => setSideMenuVisible(false)}
+          onItemClick={(item) => {
+            setSideMenuVisible(false);
+            handleItemClick(item);
+          }}
           open={sideMenuVisible}
         />
       </Box>
@@ -153,11 +181,13 @@ interface SideMenuComponentProps {
   open: boolean;
   items: NavItemModel[];
   onClose?: () => void;
+  onItemClick?: (item: NavItemModel) => void;
 }
 export const SideMenuComponent = ({
   open,
   items,
   onClose,
+  onItemClick,
 }: SideMenuComponentProps) => {
   return (
     <Drawer open={open} anchor="right" onClose={onClose}>
@@ -175,13 +205,16 @@ export const SideMenuComponent = ({
               key={item.name}
               className="flex items-center gap-4"
               selected={item.isActive}
-              onClick={(_) => onClose && onClose()}
+              onClick={(_) => onItemClick && onItemClick(item)}
             >
               {item.icon}
               <Typography>{item.name}</Typography>
             </MenuItem>
           );
         })}
+        <div className="px-4">
+          <Footer mt="4px" />
+        </div>
       </div>
     </Drawer>
   );
