@@ -1,9 +1,12 @@
 import { Typography } from "@mui/material"
 
-export const Footer = () => {
+interface Props {
+  mt?: string;
+}
+export const Footer = ({ mt = '320px' }: Props) => {
 
   return (
-    <div className="flex flex-col mt-80">
+    <div className={`flex flex-col ${mt}`} style={{ marginTop: mt }}>
       <hr />
       <div className="py-4 flex items-center justify-center">
         <Typography sx={{
