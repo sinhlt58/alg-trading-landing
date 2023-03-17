@@ -17,22 +17,26 @@ export default function HomePage() {
       const item = e.detail as NavItemModel;
       const blockRef = item.action === "home" ? homeBlockRef : bottomRef;
       if (blockRef && blockRef.current) {
-        await new Promise(r => setTimeout(r, 100));
+        await new Promise((r) => setTimeout(r, 100));
         blockRef.current.scrollIntoView({ behavior: "smooth" });
       }
-    }
+    };
 
-    document.addEventListener(AppEvent.clickNavScrollItem, handleClickNavScrollItem);
+    document.addEventListener(
+      AppEvent.clickNavScrollItem,
+      handleClickNavScrollItem
+    );
 
     return () => {
-      document.removeEventListener(AppEvent.clickNavScrollItem, handleClickNavScrollItem);
-    }
+      document.removeEventListener(
+        AppEvent.clickNavScrollItem,
+        handleClickNavScrollItem
+      );
+    };
   }, []);
 
   return (
-    <Box
-      className="mt-12 flex flex-col gap-12"
-    >
+    <Box className="mt-12 flex flex-col gap-12">
       <Grid container spacing={6} ref={homeBlockRef}>
         <Grid item xs={12} sm={4}>
           <div className="flex flex-col gap-2">
@@ -52,8 +56,15 @@ export default function HomePage() {
           <div className="flex flex-col gap-2">
             <Typography variant="h6">Supported exchanges</Typography>
             <Link href={"https://binance.com"} target="_blank">
-              <div style={{ width: 120, height: 60, position: 'relative', cursor: "pointer" }}>
-                <Image src="/logos/binance_logo_2.png" alt="Binance" fill></Image>
+              <div
+                style={{
+                  width: 100,
+                  height: 24,
+                  position: "relative",
+                  cursor: "pointer",
+                }}
+              >
+                <Image src="/logos/binance_logo.png" alt="Binance" fill></Image>
               </div>
             </Link>
           </div>
@@ -83,7 +94,7 @@ export default function HomePage() {
         <Typography variant="h6">Contact</Typography>
         <Typography>Youtube, facebook, tiktok, telegram, zalo</Typography>
       </Box>
-      <div ref={bottomRef} className='mt-80'></div>
+      <div ref={bottomRef} className="mt-80"></div>
     </Box>
   );
 }

@@ -42,7 +42,9 @@ interface Props {
   children: React.ReactNode | React.ReactNode[];
 }
 export const AppSettingProvider = ({ children }: Props) => {
-  const [themeMode, setThemeMode] = useState<PaletteMode>("light" as PaletteMode);
+  const [themeMode, setThemeMode] = useState<PaletteMode>(
+    "light" as PaletteMode
+  );
   const [language, setLanguage] = useState("en");
   const [theme, setTheme] = useState<Theme>(() => {
     return getAppTheme(themeMode);
@@ -59,7 +61,7 @@ export const AppSettingProvider = ({ children }: Props) => {
       ? localStorage.getItem(LOCAL_STORAGE_THEME_MODE)
       : "";
     savedThemeMode = (savedThemeMode ? savedThemeMode : "light") as PaletteMode;
-    setThemeMode(savedThemeMode);
+    setThemeMode(savedThemeMode as PaletteMode);
   }, []);
 
   useEffect(() => {
