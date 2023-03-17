@@ -34,22 +34,28 @@ export default function HomePage() {
     >
       <Grid container spacing={6} ref={homeBlockRef}>
         <Grid item xs={12} sm={4}>
-          <Typography>Crypto trading bot</Typography>
-          <Typography>
-            Monitor the market and help your trading more consistent
-          </Typography>
+          <div className="flex flex-col gap-2">
+            <Typography variant="h6">Crypto trading bot</Typography>
+            <Typography>
+              Monitor the market and help your trading more consistent
+            </Typography>
+          </div>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <Typography>Trading signal notifications</Typography>
-          <Typography>Join Telegram group</Typography>
+          <div className="flex flex-col gap-2">
+            <Typography variant="h6">Signal notifications</Typography>
+            <Typography>Join Telegram group</Typography>
+          </div>
         </Grid>
         <Grid item xs={12} sm={4}>
-          <Typography>Support exchanges</Typography>
-          <Typography>BINANCE</Typography>
+          <div className="flex flex-col gap-2">
+            <Typography variant="h6">Support exchanges</Typography>
+            <Typography>BINANCE</Typography>
+          </div>
         </Grid>
       </Grid>
       <Box className="flex flex-col gap-2">
-        <Typography>Management dashboard</Typography>
+        <Typography variant="h6">Management dashboard</Typography>
         <Box className="flex gap-1 overflow-x-auto">
           {imageNames.map((name) => {
             return (
@@ -65,11 +71,11 @@ export default function HomePage() {
         </Box>
       </Box>
       <Box className="flex flex-col gap-2" ref={pricingBlockRef}>
-        <Typography>Pricing</Typography>
+        <Typography variant="h6">Pricing</Typography>
         <Typography>60$ per month</Typography>
       </Box>
       <Box className="flex flex-col gap-2" ref={contactBlockRef}>
-        <Typography>Contact</Typography>
+        <Typography variant="h6">Contact</Typography>
         <Typography>Youtube, facebook, tiktok, telegram, zalo</Typography>
       </Box>
       <div ref={bottomRef} className='mt-80'></div>
