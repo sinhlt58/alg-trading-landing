@@ -6,8 +6,8 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Bunny Bot</title>
-        <meta name="description" content="Bunny Bot landing page" />
+        <title>BunnyTB</title>
+        <meta name="description" content="BunnyTB trading bot platform" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/bunny_bot_logo.png" />
       </Head>

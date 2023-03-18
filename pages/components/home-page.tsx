@@ -91,8 +91,8 @@ export default function HomePage() {
             <Link href={"https://binance.com"} target="_blank">
               <div
                 style={{
-                  width: 100,
-                  height: 24,
+                  width: 112,
+                  height: 26,
                   position: "relative",
                   cursor: "pointer",
                 }}
@@ -119,10 +119,22 @@ export default function HomePage() {
           })}
         </Box>
       </Box>
-      <Box className="flex flex-col gap-2" ref={pricingBlockRef}>
-        <Typography variant="h6">Pricing</Typography>
-        <Typography>60$ per month</Typography>
+      <Box className="flex items-center justify-center">
+        <Box className="flex flex-col gap-2 items-center" ref={pricingBlockRef}>
+          <Typography variant="h6">Pricing</Typography>
+          <Box
+            sx={{
+              padding: 2,
+              border: 1,
+              borderRadius: 1,
+              borderColor: (theme) => theme.palette.divider,
+            }}
+          >
+            <Typography>60$ per month</Typography>
+          </Box>
+        </Box>
       </Box>
+
       <Box className="flex flex-col gap-2" ref={contactBlockRef}>
         <Typography variant="h6">Contact</Typography>
         <Typography>Youtube, facebook, tiktok, telegram, zalo</Typography>

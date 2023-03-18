@@ -31,7 +31,7 @@ export const LogoComponent = ({
           <Typography
             sx={{ fontFamily: (theme) => theme.typography.fontFamily }}
           >
-            Bunny Bot
+            BunnyTB
           </Typography>
         </div>
       )}
