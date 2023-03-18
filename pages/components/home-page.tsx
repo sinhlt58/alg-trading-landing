@@ -37,16 +37,31 @@ export default function HomePage() {
 
   return (
     <Box className="mt-12 flex flex-col gap-12">
-      <Grid container spacing={6} ref={homeBlockRef}>
-        <Grid item xs={12} sm={4}>
+      <Box
+        ref={homeBlockRef}
+        sx={{
+          display: "flex",
+          flexDirection: {
+            xs: "column",
+            sm: "column",
+            md: "row",
+          },
+          gap: {
+            xs: 7,
+            sm: 7,
+            md: 2,
+          },
+        }}
+      >
+        <Box sx={{ flex: { md: 1 } }}>
           <div className="flex flex-col gap-2">
             <Typography variant="h6">Crypto trading bot</Typography>
             <Typography>
               Monitor the market and help your trading more consistency.
             </Typography>
           </div>
-        </Grid>
-        <Grid item xs={12} sm={4}>
+        </Box>
+        <Box sx={{ flex: { md: 1 } }}>
           <div className="flex flex-col gap-2">
             <Typography variant="h6">Signal notifications</Typography>
             <Link href={"https://t.me/bunnybotsignals"} target="_blank">
@@ -69,8 +84,8 @@ export default function HomePage() {
               </div>
             </Link>
           </div>
-        </Grid>
-        <Grid item xs={12} sm={4}>
+        </Box>
+        <Box sx={{ flex: { md: 1 } }}>
           <div className="flex flex-col gap-2">
             <Typography variant="h6">Supported exchanges</Typography>
             <Link href={"https://binance.com"} target="_blank">
@@ -86,8 +101,8 @@ export default function HomePage() {
               </div>
             </Link>
           </div>
-        </Grid>
-      </Grid>
+        </Box>
+      </Box>
       <Box className="flex flex-col gap-2">
         <Typography variant="h6">Management dashboard</Typography>
         <Box className="flex gap-1 overflow-x-auto">
