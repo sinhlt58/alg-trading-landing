@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { NavItemModel } from "./nav-bar";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 export default function HomePage() {
   const imageNames = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -55,7 +56,7 @@ export default function HomePage() {
       >
         <Box sx={{ flex: { md: 1 } }}>
           <div className="flex flex-col gap-2">
-            <Typography variant="h6">Crypto trading bot</Typography>
+            <Typography variant="h6">Trading assistant</Typography>
             <Typography>
               Monitor the market and help your trading more consistency.
             </Typography>
@@ -123,6 +124,7 @@ export default function HomePage() {
         <Box className="flex flex-col gap-2 items-center" ref={pricingBlockRef}>
           <Typography variant="h6">Pricing</Typography>
           <Box
+            className="flex flex-col gap-2"
             sx={{
               padding: 2,
               border: 1,
@@ -130,7 +132,26 @@ export default function HomePage() {
               borderColor: (theme) => theme.palette.divider,
             }}
           >
-            <Typography>60$ per month</Typography>
+            <Typography align="center" variant="h6">
+              60$ / month
+            </Typography>
+            <hr />
+            {[
+              "Access many strategies",
+              "Custom notifications",
+              "Top symbols",
+              "Analyzed charts",
+              "Run on custom server / domain",
+            ].map((feature) => {
+              return (
+                <div className="flex items-center gap-4" key={feature}>
+                  <CheckCircleIcon
+                    sx={{ color: (theme) => theme.palette.primary.main }}
+                  />
+                  <Typography>{feature}</Typography>
+                </div>
+              );
+            })}
           </Box>
         </Box>
       </Box>
