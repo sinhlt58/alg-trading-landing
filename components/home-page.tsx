@@ -16,7 +16,12 @@ export default function HomePage() {
   useEffect(() => {
     const handleClickNavScrollItem = async (e: any) => {
       const item = e.detail as NavItemModel;
-      const blockRef = item.action === "home" ? homeBlockRef : bottomRef;
+      const blockRef =
+        item.action === "home"
+          ? homeBlockRef
+          : item.action === "pricing"
+          ? pricingBlockRef
+          : bottomRef;
       if (blockRef && blockRef.current) {
         await new Promise((r) => setTimeout(r, 100));
         blockRef.current.scrollIntoView({ behavior: "smooth" });
