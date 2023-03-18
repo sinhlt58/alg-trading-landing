@@ -19,7 +19,7 @@ export const LogoComponent = ({
       }}
     >
       <IconButton disableRipple className="p-0">
-        <img src="/bunny_bot_logo.png" alt="logo" className="w-8 h-8" />
+        <img src="/BunnyTB_logo.png" alt="logo" className="w-8 h-8" />
       </IconButton>
       {!hideText && (
         <div

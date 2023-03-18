@@ -9,7 +9,7 @@ export default function Home() {
         <title>BunnyTB</title>
         <meta name="description" content="BunnyTB trading bot platform" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/bunny_bot_logo.png" />
+        <link rel="icon" href="/BunnyTB_logo.png" />
       </Head>
       <main>
         <HomePage />
