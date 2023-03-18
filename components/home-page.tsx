@@ -1,5 +1,5 @@
 import { AppEvent } from "@/shared/modesl";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";

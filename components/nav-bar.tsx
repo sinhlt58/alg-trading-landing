@@ -69,7 +69,7 @@ export const NavBar = ({ onClickScrollItem }: Props) => {
         action: "theme",
         icon: <DarkModeOutlinedIcon />,
         hidden: themeMode === "dark",
-        renderHorizontal: () => <DarkModeOutlinedIcon />
+        renderHorizontal: () => <DarkModeOutlinedIcon />,
       },
       {
         name: "Light",
@@ -77,7 +77,7 @@ export const NavBar = ({ onClickScrollItem }: Props) => {
         action: "theme",
         icon: <LightModeOutlinedIcon />,
         hidden: themeMode === "light",
-        renderHorizontal: () => <LightModeOutlinedIcon />
+        renderHorizontal: () => <LightModeOutlinedIcon />,
       },
       {
         name: "Login",
@@ -90,10 +90,10 @@ export const NavBar = ({ onClickScrollItem }: Props) => {
             <Typography>Login</Typography>
           </div>
         ),
-        route: "https://bunnybot.sinhblack.com"
+        route: "https://app.bunnytb.com",
       },
     ];
-    setItems(items)
+    setItems(items);
   }, [themeMode, language]);
 
   const handleItemClick = (item: NavItemModel) => {
@@ -107,10 +107,12 @@ export const NavBar = ({ onClickScrollItem }: Props) => {
       router.push(item.route);
     }
     if (item.type === "scroll") {
-      document.dispatchEvent(new CustomEvent(AppEvent.clickNavScrollItem, { detail: item }));
+      document.dispatchEvent(
+        new CustomEvent(AppEvent.clickNavScrollItem, { detail: item })
+      );
       onClickScrollItem && onClickScrollItem(item);
     }
-  }
+  };
 
   return (
     <Box
@@ -141,10 +143,14 @@ export const NavBar = ({ onClickScrollItem }: Props) => {
 
           if (item.renderHorizontal) {
             return (
-              <div key={item.name} className="cursor-pointer" onClick={() => handleItemClick(item)}>
+              <div
+                key={item.name}
+                className="cursor-pointer"
+                onClick={() => handleItemClick(item)}
+              >
                 {item.renderHorizontal()}
               </div>
-            )
+            );
           }
 
           return (
