@@ -43,7 +43,7 @@ interface Props {
 }
 export const AppSettingProvider = ({ children }: Props) => {
   const [themeMode, setThemeMode] = useState<PaletteMode>(
-    "light" as PaletteMode
+    "dark" as PaletteMode
   );
   const [language, setLanguage] = useState("en");
   const [theme, setTheme] = useState<Theme>(() => {
@@ -60,7 +60,7 @@ export const AppSettingProvider = ({ children }: Props) => {
     let savedThemeMode = IS_CLIENT_SIDE
       ? localStorage.getItem(LOCAL_STORAGE_THEME_MODE)
       : "";
-    savedThemeMode = (savedThemeMode ? savedThemeMode : "light") as PaletteMode;
+    savedThemeMode = (savedThemeMode ? savedThemeMode : "dark") as PaletteMode;
     setThemeMode(savedThemeMode as PaletteMode);
   }, []);
 

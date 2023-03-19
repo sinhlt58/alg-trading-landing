@@ -6,9 +6,11 @@ import { useEffect, useRef } from "react";
 import { NavItemModel } from "./nav-bar";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { SocialLink } from "./social-link";
+import { useAppSettingContext } from "./app-setting-context";
 
 export default function HomePage() {
-  const imageNames = [1, 2, 3, 4, 5, 6, 7, 8];
+  const { themeMode } = useAppSettingContext();
+  const imageNames = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
   const homeBlockRef = useRef<HTMLDivElement>(null);
   const pricingBlockRef = useRef<HTMLDivElement>(null);
   const socialBlockRef = useRef<HTMLDivElement>(null);
@@ -132,7 +134,7 @@ export default function HomePage() {
             return (
               <Image
                 key={name}
-                src={`/app_images/dark/${name}.png`}
+                src={`/app_images/${themeMode}/${name}.png`}
                 alt={name.toString()}
                 width={200}
                 height={400}
