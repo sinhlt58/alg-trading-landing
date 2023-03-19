@@ -31,7 +31,7 @@ export default function HomePage() {
     },
     {
       imageUrl: "/logos/telegram.svg",
-      link: "https://t.me/bunnybotsignals",
+      link: "https://t.me/bunnytbsignals",
     },
     {
       imageUrl: "/logos/linkedin.svg",
