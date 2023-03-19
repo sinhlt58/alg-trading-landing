@@ -10,9 +10,15 @@ interface Props {
 export function Layout({ children }: Props) {
   return (
     <AppSettingProvider>
-      <Grid container sx={{ bgcolor: (theme) => theme.palette.background.default }}>
+      <Grid
+        container
+        sx={{ bgcolor: (theme) => theme.palette.background.default }}
+      >
         <Grid item xs={0} md={2}></Grid>
-        <Grid item xs={12} md={8}
+        <Grid
+          item
+          xs={12}
+          md={8}
           sx={{
             paddingX: {
               xs: 2,

@@ -8,11 +8,15 @@ import "@fontsource/roboto/700.css";
 import "@/components/locales";
 
 import { Layout } from "@/components/layout";
+import FacebookChat from "@/components/facebook-chat";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <FacebookChat />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   );
 }
