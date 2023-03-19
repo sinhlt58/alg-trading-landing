@@ -33,6 +33,10 @@ export default function HomePage() {
       imageUrl: "/logos/telegram.svg",
       link: "https://t.me/bunnybotsignals",
     },
+    {
+      imageUrl: "/logos/linkedin.svg",
+      link: "https://linkedin.com/company/bunnytb",
+    },
   ];
 
   useEffect(() => {
@@ -85,7 +89,7 @@ export default function HomePage() {
           <div className="flex flex-col gap-2">
             <Typography variant="h6">Trading assistant</Typography>
             <Typography>
-              Monitor the market and help your trading more consistency.
+              Monitor the market and help your trading more consistently.
             </Typography>
           </div>
         </Box>
