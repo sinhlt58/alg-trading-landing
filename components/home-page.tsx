@@ -5,13 +5,33 @@ import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { NavItemModel } from "./nav-bar";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { SocialLink } from "./social-link";
 
 export default function HomePage() {
   const imageNames = [1, 2, 3, 4, 5, 6, 7, 8];
   const homeBlockRef = useRef<HTMLDivElement>(null);
   const pricingBlockRef = useRef<HTMLDivElement>(null);
-  const contactBlockRef = useRef<HTMLDivElement>(null);
+  const socialBlockRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
+
+  const socialLinks = [
+    {
+      imageUrl: "/logos/facebook.svg",
+      link: "https://www.facebook.com/bunnytboffical",
+    },
+    {
+      imageUrl: "/logos/youtube.svg",
+      link: "https://www.youtube.com/@bunnytbofficial",
+    },
+    {
+      imageUrl: "/logos/tiktok.svg",
+      link: "https://www.tiktok.com/@bunnytbofficial",
+    },
+    {
+      imageUrl: "/logos/telegram.svg",
+      link: "https://t.me/bunnybotsignals",
+    },
+  ];
 
   useEffect(() => {
     const handleClickNavScrollItem = async (e: any) => {
@@ -80,11 +100,7 @@ export default function HomePage() {
                     cursor: "pointer",
                   }}
                 >
-                  <Image
-                    src="/logos/telegram_logo.png"
-                    alt="Telegram"
-                    fill
-                  ></Image>
+                  <Image src="/logos/telegram.svg" alt="Telegram" fill></Image>
                 </div>
                 <Typography>Telegram group</Typography>
               </div>
@@ -98,7 +114,7 @@ export default function HomePage() {
               <div
                 style={{
                   width: 112,
-                  height: 26,
+                  height: 28,
                   position: "relative",
                   cursor: "pointer",
                 }}
@@ -110,7 +126,7 @@ export default function HomePage() {
         </Box>
       </Box>
       <Box className="flex flex-col gap-2">
-        <Typography variant="h6">Management dashboard</Typography>
+        <Typography variant="h6">Dashboard</Typography>
         <Box className="flex gap-1 overflow-x-auto">
           {imageNames.map((name) => {
             return (
@@ -161,9 +177,15 @@ export default function HomePage() {
         </Box>
       </Box>
 
-      <Box className="flex flex-col gap-2" ref={contactBlockRef}>
-        <Typography variant="h6">Contact</Typography>
-        <Typography>Youtube, facebook, tiktok, telegram, zalo</Typography>
+      <Box className="flex flex-col gap-2" ref={socialBlockRef}>
+        <Typography variant="h6" align="center">
+          Social
+        </Typography>
+        <div className="flex items-center justify-center gap-4">
+          {socialLinks.map((sl) => {
+            return <SocialLink key={sl.link} {...sl} />;
+          })}
+        </div>
       </Box>
       <div ref={bottomRef} className="mt-80"></div>
     </Box>

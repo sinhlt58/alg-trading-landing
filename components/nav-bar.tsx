@@ -39,9 +39,9 @@ export const NavBar = ({ onClickScrollItem }: Props) => {
         icon: <PaidOutlinedIcon />,
       },
       {
-        name: "Contact",
+        name: "Social",
         type: "scroll",
-        action: "contact",
+        action: "social",
         icon: <ContactPageOutlinedIcon />,
       },
       {
