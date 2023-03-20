@@ -96,7 +96,7 @@ export default function HomePage() {
         <Box sx={{ flex: { md: 1 } }}>
           <div className="flex flex-col gap-2">
             <Typography variant="h6">Signal notifications</Typography>
-            <Link href={"https://t.me/bunnybotsignals"} target="_blank">
+            <Link href={"https://t.me/bunnytbsignals"} target="_blank">
               <div className="flex items-center gap-2">
                 <div
                   style={{
