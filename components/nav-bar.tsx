@@ -219,7 +219,7 @@ export const SideMenuComponent = ({
   onItemClick,
 }: SideMenuComponentProps) => {
   return (
-    <Drawer open={open} anchor="right" onClose={onClose}>
+    <Drawer open={open} anchor="left" onClose={onClose}>
       <div className="flex flex-col h-full">
         <div className="flex items-center gap-1 p-4">
           <LogoComponent responsive={false} onClick={onClose} />
